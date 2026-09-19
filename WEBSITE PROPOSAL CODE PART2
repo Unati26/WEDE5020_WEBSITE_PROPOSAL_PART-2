@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ocean Breeze Resort | Eco-Luxury Beachfront Resort Ballito</title>
+<meta name="description" content="5-Star Eco-Luxury Beachfront Resort in Ballito, KZN. Book direct for special rates">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {'seafoam':'#4A9E8F','sand':'#E8DCC4','navy':'#1F2A44','coral':'#F2855E'},
+    fontFamily: {'heading':['Cormorant Garamond','serif'],'body':['Lato','sans-serif']}
+  }}
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+.page-section{display:none; opacity:0;}
+.page-section.active{display:block; opacity:1; animation:fadeIn 0.6s ease;}
+@keyframes fadeIn{from{opacity:0; transform:translateY(15px)} to{opacity:1; transform:translateY(0)}}
+
+/* PART 2: CSS STYLING ENHANCEMENTS */
+body{-webkit-font-smoothing:antialiased}
+h1,h2,h3{letter-spacing:-0.3px}
+.hover-lift{transition:all 0.35s cubic-bezier(0.4,0,0.2,1)}
+.hover-lift:hover{transform:translateY(-10px); box-shadow:0 25px 50px rgba(31,42,68,0.18)}
+.nav-link{position:relative}
+.nav-link::after{content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:#4A9E8F; transition:width 0.3s}
+.nav-link:hover::after{width:100%}
+input:focus,select:focus,textarea:focus{outline:none; border-color:#4A9E8F!important; box-shadow:0 0 0 3px rgba(74,158,143,0.25)}
+::selection{background:#4A9E8F; color:white}
+.btn-coral{transition:all 0.3s}.btn-coral:hover{background:#e0704a; transform:scale(1.02)}
+/* Responsive Menu */
+#mobileMenu{max-height:0; overflow:hidden; transition:max-height 0.4s ease}
+#mobileMenu.open{max-height:500px}
+</style>
+</head>
+<body class="font-body text-navy bg-white">
+
+<!-- NAVIGATION - UX OPTIMIZED -->
+<header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="#home" onclick="showPage('home')" class="font-heading text-2xl text-seafoam font-bold">Ocean Breeze Resort</a>
+<ul id="desktopNav" class="hidden md:flex space-x-6 text-sm font-medium">
+<li><a href="#home" onclick="showPage('home')" class="nav-link hover:text-seafoam">Home</a></li>
+<li><a href="#about" onclick="showPage('about')" class="nav-link hover:text-seafoam">About</a></li>
+<li><a href="#services" onclick="showPage('services')" class="nav-link hover:text-seafoam">Experiences</a></li>
+<li><a href="#products" onclick="showPage('products')" class="nav-link hover:text-seafoam">Accommodation</a></li>
+<li><a href="#location" onclick="showPage('location')" class="nav-link hover:text-seafoam">Location</a></li>
+<li><a href="#contact" onclick="showPage('contact')" class="nav-link hover:text-seafoam">Contact</a></li>
+</ul>
+<div class="flex items-center gap-3">
+<a href="#booking" onclick="showPage('home')" class="bg-coral text-white px-4 py-2 rounded-lg font-bold btn-coral text-sm">Book Now</a>
+<button id="menuBtn" class="md:hidden text-2xl text-navy">☰</button>
+</div>
+</nav>
+<!-- Mobile Menu - Responsive Design -->
+<div id="mobileMenu" class="md:hidden bg-white border-t">
+<ul class="flex flex-col p-6 space-y-4">
+<li><a href="#home" onclick="showPage('home'); toggleMobile()" class="block">Home</a></li>
+<li><a href="#about" onclick="showPage('about'); toggleMobile()" class="block">About</a></li>
+<li><a href="#services" onclick="showPage('services'); toggleMobile()" class="block">Experiences</a></li>
+<li><a href="#products" onclick="showPage('products'); toggleMobile()" class="block">Accommodation</a></li>
+<li><a href="#location" onclick="showPage('location'); toggleMobile()" class="block">Location</a></li>
+<li><a href="#contact" onclick="showPage('contact'); toggleMobile()" class="block">Contact</a></li>
+</ul>
+</div>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page-section active">
+<section id="booking" class="relative h-[90vh] bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070')">
+<div class="absolute inset-0 bg-navy/40"></div>
+<div class="relative z-10 container mx-auto px-6 h-full flex-col justify-center items-center text-center text-white flex">
+<h1 class="font-heading text-5xl md:text-7xl mb-4">Eco-Luxury Coastal Escape</h1>
+<p class="text-lg mb-8 max-w-2xl">Wellness, Family Fun & Beachfront Bliss in Ballito - 5 Star Sustainable Resort</p>
+<div class="bg-white text-navy p-4 rounded-xl shadow-2xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-4 gap-3">
+<input type="date" id="checkin" class="p-3 border rounded-lg w-full">
+<input type="date" id="checkout" class="p-3 border rounded-lg w-full">
+<select class="p-3 border rounded-lg"><option>2 Adults, 1 Room</option><option>Family Villa - 4 Guests</option></select>
+<button onclick="showPage('confirmation')" class="bg-seafoam text-white font-bold py-3 rounded-lg hover:bg-opacity-90 transition">Check Availability</button>
+</div>
+</div>
+</section>
+<section class="py-20 bg-sand">
+<div class="container mx-auto px-6 text-center">
+<h2 class="font-heading text-4xl mb-12">Stay With Us</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white rounded-xl shadow-lg p-6 hover-lift"><h3 class="font-heading text-2xl">Ocean View Suite</h3><p class="text-sm mt-2 text-gray-600">King bed, balcony, sea views from R3,200/night</p></div>
+<div class="bg-white rounded-xl shadow-lg p-6 hover-lift"><h3 class="font-heading text-2xl">Family Villa</h3><p class="text-sm mt-2 text-gray-600">2 Bedrooms, private pool, kitchen from R5,500/night</p></div>
+<div class="bg-white rounded-xl shadow-lg p-6 hover-lift"><h3 class="font-heading text-2xl">Wellness Retreat</h3><p class="text-sm mt-2 text-gray-600">Spa access, yoga deck, healthy minibar</p></div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page-section">
+<section class="py-20 container mx-auto px-6">
+<h1 class="font-heading text-5xl text-center mb-8">About Ocean Breeze Resort</h1>
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<img src="https://images.unsplash.com/photo-1540541338287-4179f3894fe2?q=80&w=2070" class="rounded-2xl shadow-xl">
+<div>
+<p class="mb-4 text-lg">Established in 2012, Ocean Breeze Resort is Ballito's premier eco-luxury destination.</p>
+<p>Our mission: To provide unforgettable coastal experiences while preserving the natural beauty of KZN coastline. 100% solar powered, plastic free, community owned.</p>
+</div>
+</div>
+</section>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="page-section">
+<section class="py-20 bg-sand">
+<div class="container mx-auto px-6">
+<h1 class="font-heading text-5xl text-center mb-12">Resort Experiences & Services</h1>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-xl shadow-lg text-center hover-lift"><span class="text-5xl">🏖️</span><h3 class="font-heading text-xl mt-4">Beach Club</h3><p class="text-sm mt-2">Private beach access & sun loungers</p></div>
+<div class="bg-white p-8 rounded-xl shadow-lg text-center hover-lift"><span class="text-5xl">🏊</span><h3 class="font-heading text-xl mt-4">Infinity Pool</h3><p class="text-sm mt-2">Heated ocean-view pool</p></div>
+<div class="bg-white p-8 rounded-xl shadow-lg text-center hover-lift"><span class="text-5xl">🧘</span><h3 class="font-heading text-xl mt-4">Wellness Spa</h3><p class="text-sm mt-2">Massage & yoga daily</p></div>
+<div class="bg-white p-8 rounded-xl shadow-lg text-center hover-lift"><span class="text-5xl">🍽️</span><h3 class="font-heading text-xl mt-4">Ocean Restaurant</h3><p class="text-sm mt-2">Farm-to-table dining</p></div>
+<div class="bg-white p-8 rounded-xl shadow-lg text-center hover-lift"><span class="text-5xl">👶</span><h3 class="font-heading text-xl mt-4">Kids Club</h3><p class="text-sm mt-2">Eco activities for kids</p></div>
+<div class="bg-white p-8 rounded-xl shadow-lg text-center hover-lift"><span class="text-5xl">🚤</span><h3 class="font-heading text-xl mt-4">Water Sports</h3><p class="text-sm mt-2">Kayak & dolphin tours</p></div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- PRODUCTS / ACCOMMODATION -->
+<div id="products" class="page-section">
+<section class="py-20">
+<div class="container mx-auto px-6">
+<h1 class="font-heading text-5xl text-center mb-12">Accommodation</h1>
+<div class="space-y-12 max-w-5xl mx-auto">
+<div class="flex flex-col md:flex-row gap-8 items-center hover-lift bg-white p-6 rounded-2xl shadow">
+<img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=800" class="w-full md:w-1/2 h-80 rounded-xl">
+<div><h3 class="font-heading text-3xl mb-2">Ocean View Suite</h3><p class="mb-3">King bed, balcony, 45m², sea view, ensuite. Perfect for couples.</p><span class="font-bold text-seafoam text-xl">R3,200 / night</span></div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-center hover-lift bg-white p-6 rounded-2xl shadow">
+<img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800" class="w-full md:w-1/2 h-80 rounded-xl">
+<div><h3 class="font-heading text-3xl mb-2">Family Villa</h3><p class="mb-3">2 Bedrooms, private pool, kitchen, garden. Sleeps 5.</p><span class="font-bold text-seafoam text-xl">R5,500 / night</span></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- LOCATION -->
+<div id="location" class="page-section">
+<section class="py-20 bg-sand">
+<div class="container mx-auto px-6">
+<h1 class="font-heading text-5xl text-center mb-8">Find Us in Ballito</h1>
+<div class="grid md:grid-cols-2 gap-12 bg-white p-8 rounded-xl shadow-lg">
+<div><h3 class="font-heading text-2xl mb-4">Contact Details</h3><p class="mb-2">📍 1 Ocean Drive, Ballito, KZN 4420</p><p class="mb-2">📞 032 946 0000</p><p class="mb-2">✉️ stay@oceanbreeze.co.za</p><p class="mt-6 font-bold">Only 15 mins from King Shaka Airport</p></div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465.512!2d31.2153!3d-29.541" class="w-full h-80 rounded-xl border-0" loading="lazy"></iframe>
+</div>
+</div>
+</section>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page-section">
+<section class="py-20">
+<div class="container mx-auto px-6 max-w-2xl">
+<h1 class="font-heading text-5xl text-center mb-8">Get In Touch</h1>
+<form id="contactForm" class="space-y-4 bg-sand p-8 rounded-xl shadow-lg">
+<input type="text" id="name" placeholder="Full Name" required class="w-full p-3 border rounded-lg">
+<input type="email" id="email" placeholder="Email Address" required class="w-full p-3 border rounded-lg">
+<input type="text" id="subject" placeholder="Subject" class="w-full p-3 border rounded-lg">
+<textarea id="message" placeholder="Your Message" rows="5" required class="w-full p-3 border rounded-lg"></textarea>
+<button type="submit" class="bg-seafoam text-white px-6 py-3 rounded-lg font-bold w-full hover:bg-opacity-90">Send Message</button>
+<p id="formStatus" class="text-center mt-4 font-medium"></p>
+</form>
+</div>
+</section>
+</div>
+
+<!-- CONFIRMATION -->
+<div id="confirmation" class="page-section">
+<section class="py-32 text-center">
+<div class="container mx-auto px-6">
+<div class="max-w-2xl mx-auto bg-sand p-12 rounded-xl shadow-2xl">
+<div class="text-6xl mb-4">✓</div>
+<h1 class="font-heading text-5xl text-seafoam mb-4">Thank You!</h1>
+<p class="text-lg mb-8">Your request has been received. Our team will contact you within 24 hours with availability & best rates.</p>
+<button onclick="showPage('home')" class="bg-seafoam text-white px-8 py-3 rounded-lg font-bold">Back to Home</button>
+</div>
+</div>
+</section>
+</div>
+
+<footer class="bg-navy text-white text-center py-8">
+<p>© 2026 Ocean Breeze Resort. Ballito, KwaZulu-Natal, South Africa. | Eco-Certified</p>
+</footer>
+
+<a href="https://wa.me/27329460000" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-xl hover:scale-110 transition z-50">💬</a>
+
+<script>
+function showPage(pageId){
+ document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
+ document.getElementById(pageId).classList.add('active');
+ window.scrollTo({top:0, behavior:'smooth'});
+}
+function toggleMobile(){
+ document.getElementById('mobileMenu').classList.toggle('open');
+}
+document.getElementById('menuBtn').addEventListener('click', toggleMobile);
+
+document.getElementById('contactForm').addEventListener('submit', function(e){
+ e.preventDefault();
+ document.getElementById('formStatus').innerText="Sending...";
+ setTimeout(()=>{
+  document.getElementById('formStatus').innerText="Message sent! We will reply soon.";
+  document.getElementById('contactForm').reset();
+  setTimeout(()=>showPage('confirmation'),1500);
+ },1000);
+});
+</script>
+</body>
+</html>
